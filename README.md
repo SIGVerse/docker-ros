@@ -42,5 +42,4 @@ Docker DesktopのContainersには以下のようなコンテナが起動しま�
 1. ブラウザを起動し、以下にアクセスします。  
 http://127.0.0.1:6080/
 1. 以下のようなLXDEのUbuntuデスクトップ画面が表示されます。  
-![vnc-desktop1](images/vnc-desktop1.png "上側")  
-![vnc-desktop1](images/vnc-desktop2.png "下側")
+![vnc-desktop](images/vnc-desktop.png "VNC Window")  
