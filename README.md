@@ -26,7 +26,7 @@ Windows PowerShell で実行します。
 
 Windows PowerShell で実行します。
 
-1. Dockerイメージをダウンロードし、Dockerコンテナを作成します。
+1. Dockerイメージをダウンロードし、Dockerコンテナを作成します。  
 `> docker run -p 6080:80 -p 9090:9090 -p 50001:50001 inamuralab/sigverse-ros-noetic`
 1. 起動完了するまで待ちます。以下のような状態であれば起動完了しています。
 ![create-container](images/create-container.png "Create Container")
