@@ -32,6 +32,6 @@ Windows PowerShell で実行します。
 ![create-container](images/create-container.png "Create Container")
 1. ブラウザを起動し、以下にアクセスします。  
 http://127.0.0.1:6080/
-1. 以下のような画面が表示されます。  
+1. 以下のようなLXDEのUbuntuデスクトップ画面が表示されます。  
 ![vnc-desktop1](images/vnc-desktop1.png "上側")  
 ![vnc-desktop1](images/vnc-desktop2.png "下側")
