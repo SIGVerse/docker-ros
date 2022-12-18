@@ -13,16 +13,14 @@ Windowsでイメージのビルドを行う例を以降に示します。
 Windows PowerShell で実行します。
 
 1. Windows PowerShell を起動します。
-1. docker loginコマンドで稲邑研のDocker Hubアカウントにログインします。ID/Passwordは別途確認してください。
-  ```bash
-  > docker login
-  ```
+1. docker loginコマンドで稲邑研のDocker Hubアカウントにログインします。ID/Passwordは別途確認してください。  
+`> docker login`
 1. 本リポジトリをcloneします
 1. 本リポジトリのDockerfileが存在するディレクトリに移動します。
-1. Dockerイメージをビルドします。
-> docker build . -t inamuralab/sigverse-ros-noetic
-1. DockerイメージをDocker Hubに送信します。
->  docker push inamuralab/sigverse-ros-noetic
+1. Dockerイメージをビルドします。  
+`> docker build . -t inamuralab/sigverse-ros-noetic`
+1. DockerイメージをDocker Hubに送信します。  
+`>  docker push inamuralab/sigverse-ros-noetic`
 
 ## Dockerイメージからコンテナを作成する
 
