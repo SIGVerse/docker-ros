@@ -110,6 +110,8 @@ sudo cp nodelet_plugins.xml plugins/ 2>&1
 
 #############################################
 
+source ~/.bashrc 2>&1
+
 # Reset Error Handling
 set -e
 
