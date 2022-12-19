@@ -10,7 +10,7 @@ Windowsでイメージのビルドを行う例を以降に示します。
 
 ## DockerfileからDockerイメージを作成する
 
-<span style="color: red;">この作業はSIGVerse管理者用が行う作業であり、ユーザが実行する必要はありません。</span>  
+**この作業はSIGVerse管理者用が行う作業であり、ユーザが実行する必要はありません。** 
 
 1. Docker Desktopをインストールします。  
 https://www.docker.com/products/docker-desktop/
