@@ -10,7 +10,7 @@ Windowsでイメージのビルドを行う例を以降に示します。
 
 ## DockerfileからDockerイメージを作成する
 
-**この作業はSIGVerse管理者用が行う作業であり、ユーザが実行する必要はありません。** 
+**この作業はSIGVerse管理者用が行う作業であり、ユーザが実行する必要はありません。**
 
 1. Docker Desktopをインストールします。  
 https://www.docker.com/products/docker-desktop/
@@ -44,6 +44,7 @@ Docker DesktopのContainersには以下のようなコンテナが起動しま�
 1. ブラウザを起動し、以下にアクセスします。  
 http://127.0.0.1:6080/
 1. 以下のようなLXDEのUbuntuデスクトップ画面が表示されます。  
+画面左側にはVNCツールがありVNCに関わる機能が使用可能です。  
 ![vnc-desktop](images/vnc-desktop.png "VNC Window")  
 
 ## Dockerコンテナを使用する
