@@ -1,15 +1,16 @@
 # docker-ros
 
-SIGVerse用のVNC接続可能なUbuntuデスクトップDockerコンテナを作成するためのリポジトリです。  
+SIGVerse用のVNC接続可能なUbuntuデスクトップDockerコンテナを使用するためのリポジトリです。  
 デスクトップはLXDEという軽量なものです。
 
-SIGVerse管理者用であり、ユーザが実行する必要はありません。  
 次のイメージをベースにしています。  
 https://github.com/Tiryoh/docker-ros-desktop-vnc
 
 Windowsでイメージのビルドを行う例を以降に示します。
 
 ## DockerfileからDockerイメージを作成する
+
+<span style="color: red;">この作業はSIGVerse管理者用が行う作業であり、ユーザが実行する必要はありません。</span>  
 
 1. Docker Desktopをインストールします。  
 https://www.docker.com/products/docker-desktop/
@@ -25,13 +26,14 @@ https://www.docker.com/products/docker-desktop/
 1. DockerイメージをDocker Hubに送信します。  
 `>  docker push inamuralab/sigverse-ros-noetic`
 
-## Dockerイメージからコンテナを起動する（初回起動）
+## DockerイメージからDockerコンテナを起動する（初回起動）
 
 1. Docker Desktopをインストールします（未インストールの場合）  
 https://www.docker.com/products/docker-desktop/
 1. Docker Desktopを起動して正常に起動することを確認してください。
 1. Windows PowerShell を起動します。（以降のコマンドはWindows PowerShell で実行します）
 1. Dockerイメージをダウンロードし、Dockerコンテナを作成・起動します。  
+解像度オプション（-e RESOLUTION=1920x1080）を付ければ解像度を変更可能です。  
 `> docker run -p 6080:80 -p 9090:9090 -p 50001:50001 inamuralab/sigverse-ros-noetic`
 1. 起動完了するまで待ちます。以下のような状態であれば起動完了しています。
 ![create-container](images/create-container.png "Create Container")  
@@ -43,3 +45,18 @@ Docker DesktopのContainersには以下のようなコンテナが起動しま�
 http://127.0.0.1:6080/
 1. 以下のようなLXDEのUbuntuデスクトップ画面が表示されます。  
 ![vnc-desktop](images/vnc-desktop.png "VNC Window")  
+
+## Dockerコンテナを使用する
+
++ デスクトップに sigverse_commands.txt が置いてあり、参考となるROSコマンドが書かれています。
++ 画面左側のVNCツールで Clipboard が使用可能です。
++ 画面左側のVNCツールの設定で、Scaling Modeを"Local Scaling"にするとブラウザサイズに合わせて画面が伸縮します。
+
+## Dockerコンテナを停止する
+1. 画面左側のVNCツールで Disconnect をクリックして切断します。
+1. Docker Desktopのコンテナ一覧から当該コンテナを停止します。
+
+## Dockerコンテナの起動（２回目以降）
+
+既にコンテナが存在しているのでDocker Desktopのコンテナ一覧から起動できます。  
+Windows PowerShell は使用しません。
