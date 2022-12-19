@@ -108,8 +108,6 @@ cd $ROS_ROOT/../prosilica_camera 2>&1
 sudo mkdir -p plugins 2>&1
 sudo cp nodelet_plugins.xml plugins/ 2>&1
 
-source ~/catkin_ws/devel/setup.bash 2>&1
-
 #############################################
 
 # Reset Error Handling
