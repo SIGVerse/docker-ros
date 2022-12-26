@@ -9,6 +9,6 @@ RUN chmod +x /tmp/sigverse_setup.sh
 
 RUN /bin/bash -c '. /opt/ros/noetic/setup.bash; /tmp/sigverse_setup.sh'
 
-RUN rm -rf sigverse_tmp/
+RUN rm -rf sigverse_tmp/ && rm -rf /var/lib/apt/lists/*
 COPY lxterminal.desktop Desktop/
 COPY sigverse_commands.txt Desktop/
