@@ -62,3 +62,25 @@ http://127.0.0.1:6080/
 
 既にコンテナが存在しているのでDocker Desktopのコンテナ一覧から起動できます。  
 Windows PowerShell は使用しません。
+
+## 補足
+
+### GPUを使用する方法
+
+SIGVerseにはYOLOを使用した物体認識のチュートリアルがありますが、GPUを使用できることも確認しています。
+
+##### 前提条件
+GPUを使用するには条件があると思われます。当方で確認できた一例を示します。以下が最小構成という訳ではありません（2022年12月現在）
++ Windows 10 Pro 22H2
++ Docker Desktop 4.15.0
++ GeForce RTX 3070 laptop
++ GeForce Game Ready Driver 527.56
++ CUDA Toolkit 12.0.0_525.60.13
+
+##### 手順（一例）
+1. 解像度とgpusオプションを付けてコンテナを作成します。  
+docker run --gpus all -p 6080:80 -p 5900:5900 -p 9090:9090 -p 50001:50001 -e RESOLUTION=1920x1080 inamuralab/sigverse-ros-noetic
+1. Dockerコンテナ内で Ubuntu20.04用の CUDA Toolkit をインストールします。
+1. darknet_ros/darknet/Makefile を修正して、GPUとCUDNNのフラグを立てます。（GPU=1、CUDNN=1）
+1. darknet_ros/darknet_ros/CMakeLists.txt を修正して、compute_30 と compute_35 の行をコメントアウトします。
+1. catkin_makeします。
