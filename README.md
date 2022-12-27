@@ -84,3 +84,14 @@ docker run --gpus all -p 6080:80 -p 5900:5900 -p 9090:9090 -p 50001:50001 -e RES
 1. darknet_ros/darknet/Makefile を修正して、GPUとCUDNNのフラグを立てます。（GPU=1、CUDNN=1）
 1. darknet_ros/darknet_ros/CMakeLists.txt を修正して、compute_30 と compute_35 の行をコメントアウトします。
 1. catkin_makeします。
+
+### Dockerイメージのファイル保存
+
+Windows PowerShellでコマンドを実行します。
+
+##### ファイル保存
+
+`> docker save inamuralab/sigverse-ros-noetic:latest -o docker-image-sigverse-noetic.tar`
+
+##### ファイル読み込み
+`> docker load -i docker-image-sigverse-noetic.tar`
