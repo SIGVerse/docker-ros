@@ -87,7 +87,7 @@ docker run --gpus all -p 6080:80 -p 5900:5900 -p 9090:9090 -p 50001:50001 -e RES
 
 ### Dockerイメージのファイル保存
 
-Windows PowerShellでコマンドを実行します。
+Dockerイメージをファイル保存するには、Windowsの場合、PowerShellでコマンドを実行します。
 
 ##### ファイル保存
 
