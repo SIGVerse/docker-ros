@@ -1,10 +1,8 @@
 # docker-ros
 
 SIGVerse用のVNC接続可能なUbuntuデスクトップDockerコンテナを使用するためのリポジトリです。  
-デスクトップはLXDEという軽量なものです。
-
 次のイメージをベースにしています。  
-https://github.com/Tiryoh/docker-ros-desktop-vnc
+https://github.com/Tiryoh/docker-ros2-desktop-vnc
 
 Windowsでイメージのビルドを行う例を以降に示します。
 
@@ -22,9 +20,9 @@ https://www.docker.com/products/docker-desktop/
 1. 本リポジトリをダウンロードし、ローカルに解凍します。
 1. 本リポジトリのDockerfileが存在するディレクトリに移動します。
 1. Dockerイメージをビルドします。  
-`> docker build . -t inamuralab/sigverse-ros-noetic`
+`> docker build . -t inamuralab/sigverse-ros2-humble`
 1. DockerイメージをDocker Hubに送信します。  
-`>  docker push inamuralab/sigverse-ros-noetic`
+`> docker push inamuralab/sigverse-ros2-humble`
 
 ## DockerイメージからDockerコンテナを起動する（初回起動）
 
@@ -34,7 +32,7 @@ https://www.docker.com/products/docker-desktop/
 1. Windows PowerShell を起動します。（以降のコマンドはWindows PowerShell で実行します）
 1. Dockerイメージをダウンロードし、Dockerコンテナを作成・起動します。  
 解像度オプション（-e RESOLUTION=1920x1080）を付ければ解像度を変更可能です。  
-`> docker run -p 6080:80 -p 5900:5900 -p 9090:9090 -p 50001:50001 inamuralab/sigverse-ros-noetic`
+`> docker run -p 6080:80 -p 5900:5900 -p 9090:9090 -p 50001:50001 inamuralab/sigverse-ros2-humble`
 1. 起動完了するまで待ちます。以下のような状態であれば起動完了しています。
 ![create-container](images/create-container.png "Create Container")  
 Docker DesktopのImagesには以下のようなImageが追加されています。  
