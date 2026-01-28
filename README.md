@@ -116,9 +116,10 @@ Dockerイメージをファイル保存するには、Windowsの場合、PowerSh
 
 ファイル保存  
 ```sh
-docker save inamuralab/sigverse-ros-humble:1.0 -o docker-image-sigverse-humble.tar
+docker save inamuralab/sigverse-ros2-humble:1.0 -o docker-image-sigverse-humble.tar
 ```
 ファイル読込  
 ```sh
 docker load -i docker-image-sigverse-humble.tar
+docker run -p 6080:80 -p 9090:9090 -p 50001:50001 inamuralab/sigverse-ros2-humble:1.0
 ```
