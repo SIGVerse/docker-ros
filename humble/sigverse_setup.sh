@@ -59,21 +59,23 @@ echo -e "`date +'%Y-%m-%d %H:%M:%S'` Started.\\n"
 
 # Please install ROS 2
 if [[ -z "${ROS_DISTRO:-}" ]]; then
-  throw_err "Please install ROS 2"
+  throw_err "ROS env is not loaded. Please source your ROS setup.bash first."
 fi
 
-# Please create a ROS workspace.
-if [ ! -d "${ROS2_WS}" ]; then
-  throw_err "Please create ROS workspace(${ROS2_WS})"
-fi
+# Create ROS2 workspace
+sudo rosdep init 2>/dev/null || true
+rosdep update
+
+mkdir -p "${ROS2_WS}/src"
+
+cd "${ROS2_WS}"
+colcon build --symlink-install
 
 sudo apt -y update
 
 # Add install/setup.bash to .bashrc
 SOURCE_LINE="source ${ROS2_WS}/install/setup.bash"
 grep -qxF "$SOURCE_LINE" ~/.bashrc || echo "$SOURCE_LINE" >> ~/.bashrc
-
-source "/opt/ros/${ROS_DISTRO}/setup.bash"
 
 # Install Additional Dependencies
 sudo apt install -y libncurses-dev
